@@ -4,6 +4,7 @@ import {
   DEFAULT_ALIVE_PAIRS,
   RENDER_INTERVAL
 } from "./constants.js";
+import {drawGame} from "./view.js";
 
 export class Model {
   constructor() {
@@ -26,14 +27,23 @@ export class Model {
     this.raf = requestAnimationFrame(() => {
       const currentTime = new Date().getTime();
       if (currentTime - date > RENDER_INTERVAL) {
-
+        let stateGridBuffer = JSON.parse(JSON.stringify(this.state));
         for (let i = 0; i < this.width; i++) {
           for (let j = 0; j < this.width; j++) {
             const nbAlive = this.aliveNeighbours(i, j);
-            // TODO implement Game of life logic
+            let alive = this.isCellAlive(i,j);
+            if(alive) {
+              if(nbAlive !== 2 && nbAlive !== 3) {
+                stateGridBuffer[j][i] = CELL_STATES.DEAD;
+              }
+            } else {
+              if(nbAlive === 3) {
+                stateGridBuffer[j][i] = CELL_STATES.ALIVE;
+              }
+            }
           }
         }
-
+        this.state = stateGridBuffer;
         this.updated();
         this.run(currentTime);
       } else {
@@ -63,11 +73,19 @@ export class Model {
   }
   aliveNeighbours(x, y) {
     let number = 0;
-    // TODO
+    for(let i = -1; i <= 1; i++) {
+      for(let j = -1; j <= 1; j++) {
+        if(!(i ===0 && j ===0)) {
+          if(this.isCellAlive(x+i, y+j)) {
+            number++;
+          }
+        }
+      }
+    }
     return number;
   }
 
   updated() {
-    // TODO update the view
+    drawGame(this);
   }
 }
