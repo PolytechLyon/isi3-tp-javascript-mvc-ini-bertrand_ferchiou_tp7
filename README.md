@@ -4,7 +4,9 @@
 
 > Ne copiez pas le code de votre voisin, ça se voit.
 
-Nom/Prénom: `.......`
+Nom/Prénom:
+* `BERTRAND Adrien`
+* `FERCHIOU Iskander`
 
 Lien du codesandbox: `.......`
 
@@ -28,13 +30,28 @@ Il a été inventé par [John Horton Conway](https://fr.wikipedia.org/wiki/John_
 1. Expliquer le design pattern MVC à l'aide d'un schéma à insérer directement ici.
 Utiliser un outils comme Dia pour le représenter. Je veux **votre** schéma, pas un de ceux qu'on peut trouver sur le net.
 
-2. Expliquer ce pattern en complétant ce texte.
+Afin d'illustrer le fonctionnement du design pattern MVC, nous avons réalisé le schéma ci-dessous :
 
-Le pattern MVC, vise à découper le `.......`, de la `.......` et du `.......` afin de rendre le code plus `.......`.
-Les responsabilités ne sont alors plus `.......`.
-On peut ainsi changer l'aspect visuel de son application sans pour autant impacter le `.......`.
+<img src="img/MVC.png">
+
+Ici, l'utilisateur interagit uniquement avec la *Vue*. Le *Contrôleur* regroupe la partie logique métier et
+joue le rôle d'intermédiaire entre la *Vue* et le *Modèle*. En effet, cette entité échange avec le *Modèle* afin de manipuler 
+les données concernées par l'action de l'utilisateur et, en fonction de la réponse à la requête transmise, elle met à jour la *Vue*. 
+
+3. Expliquer ce pattern en complétant ce texte.
+
+Le pattern MVC, vise à découper le `modèle`, de la `vue` et du `contrôleur` afin de rendre le code plus `structuré`.
+Les responsabilités ne sont alors plus `regroupées`.
+On peut ainsi changer l'aspect visuel de son application sans pour autant impacter le `côté logique`.
 
 3. Expliquer dans quels cas on doit privilégier le pattern MVC.
+
+Il est conseillé de privilégier le pattern MVC lorsqu'on a besoin de structurer notre code de manière à le rendre plus facilement
+maintenable et lisible. Dès qu'une application est composé d'une interface graphique et d'un ou plusieurs traitements "logique", 
+appliquer ce pattern est une bonne idée pour que le programme soit plus modulaire. De cette manière, on sépare également la 
+logique métier du code de présentation et on applique le principe SoC (Separation Of Concerns). Enfin, l'encapsulation apportée
+par ce pattern cache la partie implémentation aux yeux de l'utilisateur, ce qui participe à la simplification de l'interface et à
+la sécurisation de l'application.
 
 ## À faire (obligatoire)
 
@@ -51,7 +68,7 @@ Cela relève du design pattern Observer/Observable.
 1. Expliquer votre implémentation:
 
 L'usage d'un callback permet ici de `.......` afin de dire à la _View_ de se redessiner.
-L'objet _Model_ n'a pas de lien avec `.......` pourtant grâce à la `.......` il peut notifier la `.......`.
+L'objet _Model_ n'a pas de lien avec `View` pourtant grâce à la `méthode updated` il peut notifier la `vue`.
 
 2. Insérer ici un UML montrant le pattern Observer/Observable lié aux objets de ce TP.
 
