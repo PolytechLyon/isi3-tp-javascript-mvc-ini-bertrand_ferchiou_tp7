@@ -49,7 +49,7 @@ On peut ainsi changer l'aspect visuel de son application sans pour autant impact
 3. Expliquer dans quels cas on doit privilégier le pattern MVC.
 
 Il est conseillé de privilégier le pattern MVC lorsqu'on a besoin de structurer notre code de manière à le rendre plus facilement
-maintenable et lisible. Dès qu'une application est composé d'une interface graphique et d'un ou plusieurs traitements "logique", 
+maintenable et lisible. Dès qu'une application est composée d'une interface graphique et d'un ou plusieurs traitements "logique", 
 appliquer ce pattern est une bonne idée pour que le programme soit plus modulaire. De cette manière, on sépare également la 
 logique métier du code de présentation et on applique le principe SoC (Separation Of Concerns). Enfin, l'encapsulation apportée
 par ce pattern cache la partie implémentation aux yeux de l'utilisateur, ce qui participe à la simplification de l'interface et à
