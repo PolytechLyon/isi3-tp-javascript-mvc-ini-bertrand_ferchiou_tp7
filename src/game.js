@@ -1,5 +1,5 @@
 if (!document.getElementById) document.write('<link rel="stylesheet" type="text/css" href="./style.css">');
-import { initView, drawGame } from "./gameOfLife/view.js";
+import {initView, drawGame, update} from "./gameOfLife/view.js";
 import { Model } from "./gameOfLife/model.js";
 import { controllerStart, controllerStop, controllerReset } from "./gameOfLife/controller.js";
 
@@ -8,6 +8,7 @@ initView();
 const model = new Model();
 
 model.init();
+model.addObserver(update);
 drawGame(model);
 
 const startButton = document.getElementById("start");

@@ -4,13 +4,13 @@ import {
   DEFAULT_ALIVE_PAIRS,
   RENDER_INTERVAL
 } from "./constants.js";
-import {drawGame} from "./view.js";
 
 export class Model {
   constructor() {
     this.width = GAME_SIZE;
     this.height = GAME_SIZE;
     this.raf = null;
+    this.observers = [];
   }
 
   init() {
@@ -85,7 +85,22 @@ export class Model {
     return number;
   }
 
+  addObserver(observer) {
+    this.observers.push(observer);
+  }
+
+  removeObserver(observer) {
+    for (let i = 0; i < this.observers.length; i++) {
+      if (this.observers[i] === observer) {
+        this.observers.slice(i, 1);
+      }
+    }
+  }
+
+  // notify method
   updated() {
-    drawGame(this);
+    for (let i = 0; i < this.observers.length; i++) {
+      this.observers[i](this);
+    }
   }
 }
