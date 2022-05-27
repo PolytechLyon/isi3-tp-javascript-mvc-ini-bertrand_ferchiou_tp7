@@ -32,7 +32,9 @@ Utiliser un outils comme Dia pour le représenter. Je veux **votre** schéma, pa
 
 Afin d'illustrer le fonctionnement du design pattern MVC, nous avons réalisé le schéma ci-dessous :
 
-<img src="img/MVC.png">
+<p align="center">
+    <img src="img/MVC.png">
+</p>
 
 Ici, l'utilisateur interagit uniquement avec la *Vue*. Le *Contrôleur* regroupe la partie logique métier et
 joue le rôle d'intermédiaire entre la *Vue* et le *Modèle*. En effet, cette entité échange avec le *Modèle* afin de manipuler 
@@ -67,10 +69,14 @@ Cela relève du design pattern Observer/Observable.
 
 1. Expliquer votre implémentation:
 
-L'usage d'un callback permet ici de `.......` afin de dire à la _View_ de se redessiner.
+L'usage d'un callback permet ici de `notifier les observers` afin de dire à la _View_ de se redessiner.
 L'objet _Model_ n'a pas de lien avec `View` pourtant grâce à la `méthode updated` il peut notifier la `vue`.
 
 2. Insérer ici un UML montrant le pattern Observer/Observable lié aux objets de ce TP.
+
+<p align="center">
+    <img src="img/Observer_Observable.png">
+</p>
 
 ## Optionnel
 
