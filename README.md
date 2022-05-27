@@ -40,7 +40,7 @@ Ici, l'utilisateur interagit uniquement avec la *Vue*. Le *Contrôleur* regroupe
 joue le rôle d'intermédiaire entre la *Vue* et le *Modèle*. En effet, cette entité échange avec le *Modèle* afin de manipuler 
 les données concernées par l'action de l'utilisateur et, en fonction de la réponse à la requête transmise, elle met à jour la *Vue*. 
 
-3. Expliquer ce pattern en complétant ce texte.
+2. Expliquer ce pattern en complétant ce texte.
 
 Le pattern MVC, vise à découper le `modèle`, de la `vue` et du `contrôleur` afin de rendre le code plus `structuré`.
 Les responsabilités ne sont alors plus `regroupées`.
